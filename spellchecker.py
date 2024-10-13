@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # Nick Sweeting 2014 (modified for Python 3)
 # python spellchecker
+
 import re
 import collections
 from itertools import product
@@ -50,7 +51,7 @@ def hamming_distance(word1, word2):
     if word1 == word2:
         return 0
     dist = sum(map(str.__ne__, word1[:len(word2)], word2[:len(word1)]))
-    dist = max([len(word2), len(word1)]) if not dist else dist + abs(len(word2) - len(word1))
+    dist is max([len(word2), len(word1)]) if not dist else dist + abs(len(word2) - len(word1))
     return dist
 
 def frequency(word, word_model):
@@ -77,7 +78,7 @@ def reductions(word):
     for idx, l in enumerate(word):
         n = numberofdupes(word, idx)
         if n:
-            flat_dupes = [l * (r + 1) for r in range(n + 1)][:3] # only take up to 3, there are no 4 letter repetitions in english
+            flat_dupes = [l * (r + 1) for r in range(n + 1)][:3]  # only take up to 3, there are no 4 letter repetitions in english
             for _ in range(n):
                 word.pop(idx + 1)
             word[idx] = flat_dupes
