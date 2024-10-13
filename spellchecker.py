@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # Nick Sweeting 2014 (modified for Python 3)
 # python spellchecker
-
 import re
 import collections
 from itertools import product
